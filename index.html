@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Routine Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Progress Bar -->
+<div id="progressBarContainer" class="sticky">
+  <div id="progressBar"></div>
+</div>
+
+
+    <!-- Routine and Checklist Dashboard -->
+      <div id="routines"></div>
+
+    <!-- Add/Edit Routine Form -->
+    <section id="routineForm" style="display: none;">
+      <h2 id="formTitle">Add Routine</h2>
+<div class="form-container">
+  <form class="routine-form">
+    <input type="hidden" id="routineId">
+    
+    <div class="form-group">
+      <label for="routineName">Routine Name:</label>
+      <input type="text" id="routineName" placeholder="Enter routine name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="tasks">Checklist Items (comma-separated):</label>
+      <textarea id="tasks" rows="3" placeholder="Enter tasks separated by commas"></textarea>
+    </div>
+
+    <div class="fab-container">
+      <button type="submit" id="saveRoutine" class="fab"><i class="fa fa-check"></i></button>
+      <button type="button" id="cancelRoutine" class="fab"><i class="fa fa-times"></i></button>
+    </div>
+		
+  </form>
+</div>
+    </section>
+ 
+	
+<div class="import-export-container">
+  <!-- Database Icon Button -->
+  <button id="toggleMenu" class="menu-icon">
+    <i class="fa fa-bars"></i> <!-- Font Awesome icon -->
+  </button>
+
+  <!-- New Floating Menu -->
+  <div id="importExportMenu" class="import-export-menu">
+    <button id="exportBtn" class="btn"><i class="fa fa-download"></i></button>
+	
+    <label for="importInput" class="btn">
+      <i class="fa fa-upload"></i>
+      <input id="importInput" type="file" accept="application/json" style="display: none;">
+    </label>
+	<button id="theme-toggle" class="btn"><i class="fa fa-sun"></i></button>
+	 <button id="addRoutineFab" class="btn"><i class="fa fa-plus"></i></button>
+	  <!-- <button id="resetTasks" class="btn"><i class="fa fa-retweet"></i></button> -->
+
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+  
+   <script>
+      // Theme toggle function
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>
