@@ -1,0 +1,21 @@
+{
+  "name": "Rituals Checklist",
+  "short_name": "Rituals",
+  "description": "A simple rituals checklist app",
+  "start_url": "/routine-checklist/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6200ee",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
